@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,48 +40,73 @@ canvas {
 <body>
 
 <h1>Natan Admassu</h1>
-<h2>My Soccer Portfolio</h2>
+<h2>Division I Soccer Goalkeeper</h2>
+<h3>Binghamton University | #31</h3>
 
 <div class="section">
 <h2>About Me</h2>
-<p>My name is Natan Admassu. I am a Division I soccer goalkeeper at Binghamton University. Soccer has been a big part of my life, and I enjoy learning about sports and statistics.</p>
+
+<p>My name is Natan Admassu, and I am a Division I soccer goalkeeper at Binghamton University. During the 2026 season, I recorded 52 saves, 3 shutouts, and a 74.3% save percentage. I was also named America East Goalkeeper of the Week in September 2026.</p>
+
 </div>
 
 <div class="section">
-<h2>Soccer Photos</h2>
+<h2>My Soccer Photos</h2>
 
-<img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018" alt="Soccer field">
+<img src="photo1.jpeg" alt="Natan playing goalkeeper in green">
 
-<img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d" alt="Soccer players">
+<img src="photo2.jpeg" alt="Natan playing goalkeeper in yellow">
+
 </div>
 
 <div class="section">
-<h2>Chart 1: Saves Per Game</h2>
-<p>This line graph shows example goalkeeper saves over five games.</p>
+<h2>2026 Season Statistics</h2>
+
+<p>Games Started: 13</p>
+<p>Total Saves: 52</p>
+<p>Save Percentage: 74.3%</p>
+<p>Goals Against Average: 1.38</p>
+<p>Clean Sheets: 3</p>
+
+</div>
+
+<div class="section">
+<h2>Chart 1: Save Percentage</h2>
+
+<p>This line graph shows my save percentage in five selected games during the 2026 season.</p>
+
 <canvas id="myChart"></canvas>
+
 </div>
 
 <div class="section">
 <h2>Chart 2: Goals Allowed</h2>
-<p>This bar graph shows example goals allowed over five games.</p>
+
+<p>This bar graph shows goals allowed in the same five games, including three clean sheets.</p>
+
 <canvas id="myBarChart"></canvas>
+
 </div>
 
 <div class="section">
 <h2>My Design Choices</h2>
-<p>I decided to make my portfolio about soccer because it is something I enjoy and have been involved in for many years. I chose green for the title because it reminds me of a soccer field. I also used a light background with white sections to make everything easy to read. I included two soccer photos to match the theme of my website. For my charts, I used a line graph to show saves per game and a bar graph to show goals allowed. Overall, I wanted my website to look simple, clean, and organized.</p>
+
+<p>I decided to make my portfolio about my soccer career at Binghamton University because soccer is a big part of my life. I chose green because it reminds me of a soccer field and my university. I used a light background with white sections to make the website easy to read. I included two photos of myself playing goalkeeper for Binghamton University to make my portfolio more personal. For my charts, I used a line graph to show my save percentage and a bar graph to show goals allowed in selected games. Overall, I wanted my website to look simple, clean, and organized.</p>
+
 </div>
 
 <script>
 
-// Line Graph
-const labels = ['Game 1', 'Game 2', 'Game 3', 'Game 4', 'Game 5'];
+// Line Graph - Save Percentage
+
+const labels = ['Mount St. Marys', 'Colgate', 'CCSU',
+                'Le Moyne', 'NJIT'];
 
 const data = {
     labels,
     datasets: [{
-        label: 'Saves',
-        data: [4, 6, 3, 7, 5],
+        label: 'Save Percentage (%)',
+        data: [100, 100, 100, 87.5, 81.8],
         borderColor: 'green',
         borderWidth: 2,
         tension: 0.3
@@ -93,18 +119,20 @@ new Chart(document.getElementById('myChart'), {
     options: {
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                max: 100
             }
         }
     }
 });
 
-// Bar Graph
+// Bar Graph - Goals Allowed
+
 const barData = {
     labels,
     datasets: [{
         label: 'Goals Allowed',
-        data: [2, 1, 0, 2, 1],
+        data: [0, 0, 0, 1, 2],
         backgroundColor: 'darkgreen'
     }]
 };
